@@ -9,10 +9,10 @@ function fetchPosts() {
     if (event.target.id === 'fetchButton')
         fetch("https://jsonplaceholder.typicode.com/posts")
         .then((response) => {
-          for (let text of data) 
             response.json().then((data) => {
             console.log(data);
-            postList.innerHTML = `${data.title} </br> ${data.body}`;
+            for(let text of data)
+            postList.innerHTML += `${text.title} </br> ${text.body}.</br> </br>`;
 
          })
     }
